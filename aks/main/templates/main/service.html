@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+    <!-- Page Header Start -->
+    <div class="container-fluid bg-page-header" style="margin-bottom: 90px;">
+        <div class="container">
+            <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 400px">
+                <h3 class="display-3 text-white text-uppercase">Услуги</h3>
+                <div class="d-inline-flex text-white">
+                    <p class="m-0 text-uppercase"><a class="text-white" href="{% url "main:index" %}">Главная</a></p>
+                    <i class="fa fa-angle-double-right pt-1 px-3"></i>
+                    <p class="m-0 text-uppercase">Услуги</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Page Header End -->
+
+
+  <!-- Services Start -->
+  <div class="container-fluid py-5">
+    <div class="container py-5">
+        <div class="row">
+            <div class="container-services">
+                <div class="col-lg-3">
+                    <h6 class="text-uppercase">НАША ПРАКТИКА</h6>
+                    <h1 class="mb-4">Области нашей практики</h1>
+                    <p>Мы специализируемся на защите граждан и бизнеса от уголовных провокаций, незаконных обвинений и репутационных атак. Мы работаем на стыке права, аналитики и кризис-менеджмента, помогая нашим клиентам защищать свои интересы в сложных ситуациях.
+                    </p>
+                    {% comment %} <a href="" class="btn btn-primary mt-2">More Services</a> {% endcomment %}
+                </div>
+                <div class="col-lg-9 pt-5 pt-lg-0">
+                    {% comment %} <div class="bg-primary rounded" style="height: 200px;"></div> {% endcomment %}
+                    
+                        
+                        <div class="d-flex flex-column align-items-center text-center bg-white rounded pt-4">
+                            <div class="icon-box bg-secondary text-primary mt-2 mb-4">
+                                <i class="fa fa-2x fa-gavel"></i>
+                            </div>
+                            <h5 class="mb-4 px-4">Уголовное право</h5>
+                            <p class="m-0">Оказываем правовую поддержку на всех этапах — от досудебного разбирательства до защиты в суде. Наша цель — отстоять права и интересы каждого, кто столкнулся с уголовно-правовыми рисками.</p>
+                        </div>
+                   
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
+<!-- Services End -->
+
+
+    <!-- Action Start -->
+    <div class="container-fluid py-5">
+        <div class="container py-5">
+            <div class="bg-action rounded" style="height: 500px;">
+                <div class="row h-100 align-items-center justify-content-center">
+                    <div class="col-lg-7 text-center">
+                        <h1 class="text-white mb-4" id="consultation__title">ДАВАЙТЕ НАЧНЕМ. ПОЗВОНИТЕ НАМ СЕЙЧАС ДЛЯ КОНСУЛЬТАЦИИ</h1>
+                        <a href="tel:+7 708 321 2368" class="btn btn-primary py-3 px-5 mt-2" href=" {% url "main:contact" %} ">Позвонить</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Action End -->
+
+
+    
+{% endblock content %}

@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+    <!-- Page Header Start -->
+    <div class="container-fluid bg-page-header" style="margin-bottom: 90px;">
+        <div class="container">
+            <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 400px">
+                <h3 class="display-3 text-white text-uppercase">Написать нам</h3>
+                <div class="d-inline-flex text-white">
+                    <p class="m-0 text-uppercase"><a class="text-white" href="{% url "main:index" %}">Главная</a></p>
+                    <i class="fa fa-angle-double-right pt-1 px-3"></i>
+                    <p class="m-0 text-uppercase">Написать нам</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Page Header End -->
+
+
+    <!-- Contact Start -->
+    <div class="container-fluid py-5">
+        <div class="container py-5">
+            <div class="text-center pb-2">
+                <h6 class="text-uppercase">Написать нам</h6>
+                <h1 class="mb-4">Свяжитесь по любому вопросу</h1>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 mb-5 mb-lg-0">
+                    <div class="contact-form">
+                        <div id="success"></div>
+
+                        <form method="POST" action="{% url "sendmessage:index" %}">
+                            {% csrf_token %}
+                            <div class="form-group">
+                                <label for="id_name"></label>
+                                <input name="name" id="id_name" type="text" class="form-control p-4" placeholder="Ваше имя" required="required" />
+                            </div>
+                            <div class="form-group">
+                                <label for="id_email"></label>
+                                <input name="email" id="id_email" type="email" class="form-control p-4" placeholder="Ваша почта" required="required" />
+                            </div>
+                            <div class="form-group">
+                                <label for="id_phone"></label>
+                                <input name="phone" id="id_phone" type="phone" class="form-control p-4" placeholder="Ваш номер" required="required" />
+                            </div>
+                            <div class="form-row">
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <div class="date" id="date" data-target-input="nearest">
+                                            <label for="id_date"></label>
+                                            <input name="date" id="id_date" type="text" class="form-control p-4 datetimepicker-input" placeholder="Выберите дату" data-target="#date" data-toggle="datetimepicker"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <div class="time" id="time" data-target-input="nearest">
+                                            <label for="id_time"></label>
+                                            <input name="time" id="id_time" type="text" class="form-control p-4" placeholder="Выберите время" data-target="#time" data-toggle="datetimepicker"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="id_option"></label>
+                                <textarea type="text" name="message" id="id_option" class="custom-select" style="resize: none; width: 100%; height: 10em; caret-color: black;"></textarea>
+                            </div>
+                            <div>
+                                <button class="btn btn-primary btn-block py-3" type="submit">Записаться на прием</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-lg-6" style="min-height: 400px;">
+                    <div class="position-relative h-100 rounded overflow-hidden">
+                        
+                        <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A56c349d96d87215e4395f02a8f132c0ade4237bffac8b6fa407e599128cf0455&amp;source=constructor" width="500" height="400" frameborder="0"></iframe>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Contact End -->
+{% endblock content %}

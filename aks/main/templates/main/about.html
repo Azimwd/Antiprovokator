@@ -1,0 +1,178 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+ 
+    <!-- Page Header Start -->
+    <div class="container-fluid bg-page-header" style="margin-bottom: 90px;">
+        <div class="container">
+            <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 400px">
+                <h3 class="display-3 text-white text-uppercase">О нас</h3>
+                <div class="d-inline-flex text-white">
+                    <p class="m-0 text-uppercase"><a class="text-white" href="{% url "main:index" %}">Главная</a></p>
+                    <i class="fa fa-angle-double-right pt-1 px-3"></i>
+                    <p class="m-0 text-uppercase">О нас</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Page Header End -->
+
+
+    <!-- About Start -->
+    <div class="container-fluid py-5">
+        <div class="container py-5">
+            <div class="row">
+                <div class="col-lg-5">
+                    <img id = "about-us" class="img-fluid rounded" src="{% static "img/logo.png" %} " alt="">
+                </div>
+                <div class="col-lg-7 mt-4 mt-lg-0">
+                    
+                    <h6 class="text-uppercase">УЗНАЙТЕ О НАС</h6>
+                    <h2 class="mb-4">МЫ ПРЕДОСТАВЛЯЕМ НАДЕЖНУЮ И ЭФФЕКТИВНУЮ ЮРИДИЧЕСКУЮ ПОМОЩЬ</h2>
+                    <p>Антипровокационная служба Казахстана — это юридическая компания, защищающая права граждан и бизнеса от провокаций, незаконных обвинений и неправомерных действий со стороны третьих лиц и силовых структур. Наша команда состоит из профессионалов с глубокими знаниями в юриспруденции. Успешно работаем с нестандартными ситуациями.  Действуем строго в рамках закона и этики. Мы помогаем восстановить справедливость и вернуть уверенность в завтрашнем дне.</p>
+                    
+                    {% comment %} <a href="" class="btn btn-primary mt-2">ПОДРОБНЕЕ</a> {% endcomment %}
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About End -->
+
+
+    <!-- Appointment Start -->
+    <div class="container-fluid py-5">
+        <div class="container py-5">
+            <div class="bg-appointment rounded">
+                <div class="row h-100 align-items-center justify-content-center">
+                    <div class="col-lg-6 py-5">
+                        <div class="rounded p-5 my-5" style="background: rgba(55, 55, 63, .7);">
+                            <h1 class="text-center text-white mb-4">Записаться на прием</h1>
+                            <form method="POST" action="{% url "sendmessage:index" %}">
+                                {% csrf_token %}
+                                <div class="form-group">
+                                    <label for="id_name"></label>
+                                    <input name="name" id="id_name" type="text" class="form-control border-0 p-4" placeholder="Ваше имя" required="required" />
+                                </div>
+                                <div class="form-group">
+                                    <label for="id_email"></label>
+                                    <input name="email" id="id_email" type="email" class="form-control border-0 p-4" placeholder="Ваша почта" required="required" />
+                                </div>
+                                <div class="form-group">
+                                    <label for="id_phone"></label>
+                                    <input name="phone" id="id_phone" type="phone" class="form-control border-0 p-4" placeholder="Ваш номер" required="required" />
+                                </div>
+                                <div class="form-row">
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <div class="date" id="date" data-target-input="nearest">
+                                                <label for="id_date"></label>
+                                                <input name="date" id="id_date" type="text" class="form-control border-0 p-4 datetimepicker-input" placeholder="Выберите дату" data-target="#date" data-toggle="datetimepicker"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <div class="time" id="time" data-target-input="nearest">
+                                                <label for="id_time"></label>
+                                                <input name="time" id="id_time" type="text" class="form-control border-0 p-4" placeholder="Выберите время" data-target="#time" data-toggle="datetimepicker"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="id_option"></label>
+                                    <textarea placeholder="Опишите ситуацию" type="text" name="message" id="id_option"  style="resize: none; width: 100%; height: 10em; caret-color: black;" placeholder="Опишите ситуацию"> </textarea>
+                                </div>
+                                <div>
+                                    <button class="btn btn-primary btn-block border-0 py-3" type="submit">Записаться на прием</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Appointment End -->
+
+
+
+    <!-- Features Start -->
+    <div class="container-fluid py-5">
+        <div class="container py-5">
+            <div class="row">
+                <div class="col-lg-6" style="min-height: 500px;">
+                    <div class="position-relative h-100 rounded overflow-hidden">
+                        <img class="position-absolute w-100 h-100" src=" {% static "img/feature.jpg" %} " style="object-fit: cover;">
+                    </div>
+                </div>
+                <div class="col-lg-6 pt-5 pb-lg-5">
+                    <div class="feature-text bg-white rounded p-lg-5">
+                        <h6 class="text-uppercase">НАШИ ОСОБЕННОСТИ</h6>
+                        <h1 class="mb-4">ПОЧЕМУ ВЫБИРАЮТ НАС
+                        </h1>
+                        <div class="d-flex mb-4">
+                            <div class="btn-primary btn-lg-square px-3" style="border-radius: 50px;">
+                                <h5 class="text-secondary m-0">01</h5>
+                            </div>
+                            <div class="ml-4">
+                                <h5>Защита от провокаций и подстав, включая:</h5>
+                                <p class="m-0">Ложные обвинения и фальсификацию доказательств.<br>
+                                    Подставные дела с целью давления или дискредитации.<br>
+                                    Провокации со стороны конкурентов, партнеров или силовых структур.
+                                    </p>
+                            </div>
+                        </div>
+                        <div class="d-flex mb-4">
+                            <div class="btn-primary btn-lg-square px-3" style="border-radius: 50px;">
+                                <h5 class="text-secondary m-0">02</h5>
+                            </div>
+                            <div class="ml-4">
+                                <h5>Юридическая защита бизнеса, противодействуя:</h5>
+                                <p class="m-0">Незаконным проверкам.<br>
+                                    Клевете и репутационным атакам.<br>
+                                    Попыткам рейдерского захвата.</p>
+                            </div>
+                        </div>
+                        <div class="d-flex">
+                            <div class="btn-primary btn-lg-square px-3" style="border-radius: 50px;">
+                                <h5 class="text-secondary m-0">03</h5>
+                            </div>
+                            <div class="ml-4">
+                                <h5>Правовой анализ материалов дела. Защита на досудебном и судебном этапах.</h5>
+                                <br>
+                            </div>
+                        </div>
+                        <div class="d-flex">
+                            <div class="btn-primary btn-lg-square px-3" style="border-radius: 50px;">
+                                <h5 class="text-secondary m-0">04</h5>
+                            </div>
+                            <div class="ml-4">
+                                <h5>Разоблачение незаконных схем</h5>
+                                <p class="m-0">Сбор доказательств. <br>
+                                    Работа с правоохранительными органами и СМИ. <br>
+                                    Привлечение виновных к ответственности.</p><br>
+                            </div>
+                        </div>
+                        <div class="d-flex">
+                            <div class="btn-primary btn-lg-square px-3" style="border-radius: 50px;">
+                                <h5 class="text-secondary m-0">05</h5>
+                            </div>
+                            <div class="ml-4">
+                                <h5>Личное и корпоративное консультирование.</h5>
+                                <p class="m-0">Разработку превентивных мер по защите.</p>
+                            </div>
+                        </div>
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Features End -->
+{% endblock content %}
+ 
+
+
+   

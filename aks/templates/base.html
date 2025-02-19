@@ -1,0 +1,198 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% block head %}
+        <meta charset="utf-8">
+        <title>Ask</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="Free HTML Templates" name="keywords">
+        <meta content="Free HTML Templates" name="description">
+
+        <!-- Favicon -->
+        <link href="{% static "img/logo.png" %}" rel="icon">
+
+        <!-- Google Web Fonts -->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Roboto:wght@300;500;700&display=swap" rel="stylesheet"> 
+
+        <!-- Font Awesome -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+
+        <!-- Libraries Stylesheet -->
+        <link href="{% static "lib/owlcarousel/assets/owl.carousel.min.css" %}"  rel="stylesheet">
+        <link href=" {% static "lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" %}" rel="stylesheet" />
+
+        <!-- Customized Bootstrap Stylesheet -->
+        <link href="{% static "css/style.css" %} " rel="stylesheet">
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    {% endblock head %}
+    
+</head>
+
+<body>
+    
+    {% block header %}
+        <!-- Header Start -->
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-3 bg-secondary d-none d-lg-block">
+                    <a href="{% url "main:index" %}" class="navbar-brand w-100 h-100 m-0 p-0 d-flex align-items-center justify-content-center">
+                        {% comment %} <h1 class="m-0 display-4 text-primary text-uppercase">Justice</h1> {% endcomment %}
+                        <img class="header__logo" src="{% static "img/logo.png" %}"  alt="">
+                    </a>
+                </div>
+                <div class="col-lg-9">
+                    <div class="row bg-white border-bottom d-none d-lg-flex">
+                        <div class="col-lg-7 text-left">
+                            <div class="h-100 d-inline-flex align-items-center py-2 px-3">
+                                <i class="fa fa-envelope text-primary mr-2"></i>
+                                <small><a class="header__mail" href="mailto:antiprovokator.kz@gmail.com">antiprovokator.kz@gmail.com</a></small>
+                            </div>
+                            <div class="h-100 d-inline-flex align-items-center py-2 px-2">
+                                <i class="fa fa-phone-alt text-primary mr-2"></i>
+                                <small><a class="header__tel" href="tel:+7 708 321 2368">+7 708 321 2368</a></small>
+                            </div>
+                        </div>
+                        <div class="col-lg-5 text-right">
+                            <div class="d-inline-flex align-items-center p-2">
+                                <a class="btn btn-sm btn-outline-primary btn-sm-square mr-2" href="https://t.me/antiprovokator_kz">
+                                    <i class="fab fa-telegram"></i>
+                                </a>
+                                <a class="btn btn-sm btn-outline-primary btn-sm-square mr-2" href="https://wa.me/77083212368">
+                                    <i class="fab fa-whatsapp"></i>
+                                </a>
+                                <a class="btn btn-sm btn-outline-primary btn-sm-square mr-2" href="https://vm.tiktok.com/ZMknYUU8d/">
+                                    <i class="fab fa-tiktok"></i>
+                                </a>
+                                <a class="btn btn-sm btn-outline-primary btn-sm-square mr-2" href="https://www.facebook.com/share/1Bv7yL2ubz/">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                            
+                              
+                            </div>
+                        </div>
+                    </div>
+                    <nav class="navbar navbar-expand-lg bg-white navbar-light p-0">
+                        <a href="index.html" class="navbar-brand d-block d-lg-none">
+                            {% comment %} <img {% url "main:index" %} class="header__logo" src="{% static "img/logo.png" %}" alt=""> {% endcomment %}
+                            <h1 class="m-0 display-4 text-primary text-uppercase">ask</h1>
+                        </a>
+                        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                            <div class="navbar-nav mr-auto py-0">
+                                <a href="{% url "main:index" %}" class="nav-item nav-link">Главная</a>
+                                <a href="{% url "main:about" %}" class="nav-item nav-link">О нас</a>
+                                <a href="{% url "main:service" %}" class="nav-item nav-link">Услуги</a>
+                                {% comment %} <a href="{% url "main:team" %}" class="nav-item nav-link">Команда</a> {% endcomment %}
+
+                  
+                            </div>
+                            <a href="{% url "main:contact" %}" class="btn btn-primary mr-3 d-none d-lg-block">Написать нам</a>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    <!-- Header End -->
+    {% endblock header %}
+
+    {% block content %}
+    {% endblock content %}
+
+    {% block footer%}
+        <!-- Footer Start -->
+        <div class="container-fluid bg-secondary text-white pt-5 px-sm-3 px-md-5" style="margin-top: 90px;">
+            <div class="row mt-5">
+                <div class="col-lg-4">
+                    <div class="d-flex justify-content-lg-center p-4" style="background: rgba(256, 256, 256, .05);">
+                        <i class="fa fa-2x fa-map-marker-alt text-primary"></i>
+                        <div class="ml-3">
+                            <h5 class="text-white">Наш офис</h5>
+                            <p class="m-0"><a class="footer_address" href="https://yandex.kz/maps/ru/-/CHqHuL1n">г.Алматы, улица 13 военный городок, 38Б</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="d-flex justify-content-lg-center p-4" style="background: rgba(256, 256, 256, .05);">
+                        <i class="fa fa-2x fa-envelope-open text-primary"></i>
+                        <div class="ml-3">
+                            <h5 class="text-white">Электронной почта</h5>
+                            <p class="m-0"><a class="header__mail" href="mailto:antiprovokator.kz@gmail.com">antiprovokator.kz@gmail.com</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="d-flex justify-content-lg-center p-4" style="background: rgba(256, 256, 256, .05);">
+                        <i class="fa fa-2x fa-phone-alt text-primary"></i>
+                        <div class="ml-3">
+                            <h5 class="text-white">Позвоните нам</h5>
+                            <p class="m-0"><a class="header__tel" href="tel:+7 708 321 2368">+7 708 321 2368</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row pt-5">
+                <div class="col-lg-3 col-md-6 mb-5">
+                    <a href="index.html" class="navbar-brand">
+                        <h1 class="m-0 mt-n2 display-4 text-primary text-uppercase">Ask</h1>
+                    </a>
+                    <p>Мы готова бороться за вас</p>
+                    <div class="d-flex justify-content-start mt-4">
+            
+                        <a class="btn btn-lg btn-outline-light btn-lg-square mr-2" href="https://t.me/antiprovokator_kz"><i class="fab fa-telegram"></i></i></a>
+                        <a class="btn btn-lg btn-outline-light btn-lg-square mr-2" href="https://www.facebook.com/share/1Bv7yL2ubz/"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-lg btn-outline-light btn-lg-square mr-2" href="https://wa.me/77083212368"><i class="fab fa-whatsapp"></i></i></a>
+                        <a class="btn btn-lg btn-outline-light btn-lg-square" href="https://vm.tiktok.com/ZMknYUU8d/"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-5">
+                    <h4 class="font-weight-semi-bold text-primary mb-4">Популярные ссылки</h4>
+                    <div class="d-flex flex-column justify-content-start">
+                        <a class="text-white mb-2" href="{% url "main:index" %}"><i class="fa fa-angle-right mr-2"></i>Главная</a>
+                        <a class="text-white mb-2" href="{% url "main:about" %}"><i class="fa fa-angle-right mr-2"></i>О нас</a>
+                        <a class="text-white mb-2" href="{% url "main:service" %}"><i class="fa fa-angle-right mr-2"></i>Сервисы</a>
+                        {% comment %} <a class="text-white mb-2" href="{% url "main:team" %}"><i class="fa fa-angle-right mr-2"></i>Команда</a> {% endcomment %}
+                        <a class="text-white" href="{% url "main:contact" %}"><i class="fa fa-angle-right mr-2"></i>Написать нам</a>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="row p-4 mt-5 mx-0" style="background: rgba(256, 256, 256, .05);">
+                <div class="col-md-6 text-center text-md-left mb-3 mb-md-0">
+                    
+                </div>
+                <div class="col-md-6 text-center text-md-right">
+                   
+                </div>
+            </div>
+        </div>
+        <!-- Footer End -->
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-primary px-3 back-to-top"><i class="fa fa-angle-double-up"></i></a>
+    {% endblock footer %}
+
+   
+
+
+   
+    {% block scripts %}
+        <!-- JavaScript Libraries -->
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+
+        <script src="{% static "lib/owlcarousel/owl.carousel.min.js" %}"></script>
+        <script src="{% static "lib/tempusdominus/js/moment.min.js" %}"></script>
+
+        <script src="{% static "js/main.js" %} "></script>
+    {% endblock scripts %}
+    
+</body>
+
+</html>
